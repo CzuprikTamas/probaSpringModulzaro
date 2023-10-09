@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add person</title>
+</head>
+<body>
+<div>
+    <form method="post" th:action="@{/add-person}">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="name" placeholder="Name" th:field="*{newPerson.name}">
+            <label for="name">Name</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="placeofbirth" placeholder="Placeofbirth" th:field="*{newPerson.placeOfBirth}">
+            <label for="placeofbirth">Place Of Birth</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="dateofbirth" placeholder="Dateofbirth" th:field="*{newPerson.dateOfBirth}">
+            <label for="dateofbirth">Date Of Birth</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="email" placeholder="Email" th:field="*{newPerson.email}">
+            <label for="email">Email</label>
+        </div>
+<!--        <div class="form-floating">-->
+<!--            <input type="text" class="form-control" id="spending" placeholder="personSpending" th:field="*{newPerson.personSpending}">-->
+<!--            <label for="spending">Spending Info</label>-->
+<!--        </div>-->
+
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+</body>
+</html>

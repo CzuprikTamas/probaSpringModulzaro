@@ -1,0 +1,30 @@
+package hu.progmatic.probaspringmodulzaro.model;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.util.List;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class Person {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+    private String placeOfBirth;
+    private LocalDate dateOfBirth;
+    private String email;
+
+    @OneToMany(mappedBy = "personId")
+    @JsonManagedReference
+    private List<Spending> personSpending;
+
+}

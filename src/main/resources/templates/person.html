@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>
+      <a th:href="@{/home}">Home</a>
+      <a th:href="@{/person}">Add Person</a>
+      <a th:href="@{/spending}">Add spending</a>
+    </td>
+  </tr>
+</table>
+
+<main>
+    <h1>Person List</h1>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Place Of Birth</th>
+            <th>Date Of Birth</th>
+            <th>Email</th>
+<!--            <th>Spending Info</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="currentGuest : ${personList}">
+            <td th:text="${currentGuest.getId()}">1</td>
+            <td th:text="${currentGuest.getName()}">Jónás</td>
+            <td th:text="${currentGuest.getPlaceOfBirth()}">Debrecen</td>
+            <td th:text="${currentGuest.getDateOfBirth()}">1999-01-11</td>
+            <td th:text="${currentGuest.getEmail()}">a@a.com</td>
+<!--            <td th:text="${currentGuest.getPersonSpending()}">asd</td>-->
+
+        </tr>
+        </tbody>
+    </table>
+    <a href="/add-person" class="btn btn-primary">Add a Person</a>
+    <a href="/delete-person" class="btn btn-primary">Delete Person</a>
+
+</main>
+</body>
+</html>

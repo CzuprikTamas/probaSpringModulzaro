@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spending</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td>
+      <a th:href="@{/home}">Home</a>
+      <a th:href="@{/person}">Add Person</a>
+      <a th:href="@{/spending}">Add spending</a>
+    </td>
+  </tr>
+</table>
+
+<main>
+    <h1>Person List</h1>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Where to send</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="currentGuest : ${spendingList}">
+            <td th:text="${currentGuest.getId()}">2</td>
+            <td th:text="${currentGuest.getPlace()}">Pest</td>
+            <td th:text="${currentGuest.getPrice()}">213</td>
+
+
+        </tr>
+        </tbody>
+    </table>
+    <a href="/add-spending" class="btn btn-primary">Add a Person</a>
+
+</main>
+</body>
+</html>

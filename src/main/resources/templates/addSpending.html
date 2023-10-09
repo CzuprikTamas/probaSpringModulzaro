@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form method="post" th:action="@{/add-spending}">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="place" placeholder="Place" th:field="*{newSpending.place}">
+            <label for="place">Place</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="price" placeholder="Price" th:field="*{newSpending.price}">
+            <label for="price">Price</label>
+        </div>
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+</body>
+</html>
